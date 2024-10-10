@@ -1,0 +1,14 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Just A Cat", "DarkTheme")
+local Tab = Window:NewTab("Instant UGC")
+local Section = Tab:NewSection("Just A Cat")
+Section:NewToggle("Candys", "GetCandy", function(state)
+while task.wait() do
+game:GetService("ReplicatedStorage").Remote.CandyAdd:FireServer()
+end
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
